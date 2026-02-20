@@ -1,0 +1,11 @@
+scanpy
+anndata
+scvi-tools
+leidenalg
+umap-learn
+pandas
+numpy
+matplotlib
+seaborn
+plotly
+jupyterlab
