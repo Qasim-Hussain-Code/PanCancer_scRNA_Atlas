@@ -76,32 +76,15 @@ suppressPackageStartupMessages({
     library(plotly)
     library(htmlwidgets)
     library(IRdisplay)
-    library(jsonlite)
 })
 
 # ==============================================================================
-# Rendering Engine Polyfill Configuration
-# Provides support for fig.show(renderer='iframe') logic natively within R.
-# The base64 iframe method hangs the Kaggle browser UI due to massive text payloads,
-# and Kaggle's security settings often sandbox standard external iframes.
-# This polyfill captures the exact syntax you requested, but directly routes 
-# the figure into Kaggle's trusted native IRkernel widget rendering engine.
+# StackOverflow Kaggle Plotly Rendering Fix
 # ==============================================================================
-fig.show <- function(fig, renderer="iframe", filename=NULL) {
-    if (is.null(filename)) filename <- "temp_plot.html"
-    
-    # Save widget precisely to file
-    htmlwidgets::saveWidget(plotly::as_widget(fig), filename, selfcontained = TRUE)
-    
-    # Extract structural HTML matrix and base64 encode it 
-    html_raw <- paste(readLines(filename, warn = FALSE), collapse = "\\n")
-    encoded <- sprintf("data:text/html;base64,%s", jsonlite::base64_enc(charToRaw(html_raw)))
-    
-    # Render natively as an unblockable src iframe
-    IRdisplay::display_html(sprintf('<iframe src="%s" width="900" height="700" style="border:none;" allowfullscreen></iframe>', encoded))
-}
+# Implementing the exact, officially recognized Kaggle R iframe workaround explicitly.
+# ==============================================================================
 
-print("Core libraries and custom rendering engines successfully initialized.")
+print("Core libraries successfully initialized.")
 """))
 
 # ====== PHASE 1 ======
@@ -174,8 +157,9 @@ fig_qc_3d <- plot_ly(
     font = list(color = 'black', family = "Arial")
 )
 
-# Render isolated via Iframe
-fig.show(fig_qc_3d, renderer="iframe", filename="fig1_qc.html")
+# Render via StackOverflow Iframe Fix Explicitly
+htmlwidgets::saveWidget(fig_qc_3d, "fig1_qc.html")
+IRdisplay::display_html("<iframe src='fig1_qc.html' width='100%' height='800px' style='border:none;'></iframe>")
 """))
 
 # ====== PHASE 2 ======
@@ -212,7 +196,8 @@ fig_pca_3d <- plot_ly(
     font = list(color = 'black', family = "Arial")
 )
 
-fig.show(fig_pca_3d, renderer="iframe", filename="fig2_pca.html")
+htmlwidgets::saveWidget(fig_pca_3d, "fig2_pca.html")
+IRdisplay::display_html("<iframe src='fig2_pca.html' width='100%' height='800px' style='border:none;'></iframe>")
 
 # Figure 3: Validating Harmonic Convergence in 2D Manifolds
 # Suppress massive console output
@@ -273,7 +258,8 @@ fig_data <- plot_ly(
     font = list(color = 'black', family = "Arial")
 )
 
-fig.show(fig_data, renderer="iframe", filename="fig4_cluster.html")
+htmlwidgets::saveWidget(fig_data, "fig4_cluster.html")
+IRdisplay::display_html("<iframe src='fig4_cluster.html' width='100%' height='800px' style='border:none;'></iframe>")
 """))
 
 # ====== PHASE 4 ======
@@ -316,7 +302,8 @@ fig_cell_3d <- plot_ly(
     font = list(color = 'black', family = "Arial")
 )
 
-fig.show(fig_cell_3d, renderer="iframe", filename="fig5_ontology.html")
+htmlwidgets::saveWidget(fig_cell_3d, "fig5_ontology.html")
+IRdisplay::display_html("<iframe src='fig5_ontology.html' width='100%' height='800px' style='border:none;'></iframe>")
 
 # Figure 6: Spatial Geometric Expression Mapping
 marker_gene <- "CD3E" # Canonical T-cell co-receptor
@@ -344,7 +331,8 @@ if (marker_gene %in% rownames(atlas)) {
         font = list(color = 'black', family = "Arial")
     )
     
-    fig.show(fig_feature_3d, renderer="iframe", filename="fig6_expression.html")
+    htmlwidgets::saveWidget(fig_feature_3d, "fig6_expression.html")
+    IRdisplay::display_html("<iframe src='fig6_expression.html' width='100%' height='800px' style='border:none;'></iframe>")
 } else {
     print(paste("Marker", marker_gene, "not captured in minimal sub-sample matrix."))
 }
@@ -397,7 +385,8 @@ fig_volcano_3d <- plot_ly(
     font = list(color = 'black', family = "Arial")
 )
 
-fig.show(fig_volcano_3d, renderer="iframe", filename="fig7_volcano.html")
+htmlwidgets::saveWidget(fig_volcano_3d, "fig7_volcano.html")
+IRdisplay::display_html("<iframe src='fig7_volcano.html' width='100%' height='800px' style='border:none;'></iframe>")
 """))
 
 # ====== PHASE 5b ======
@@ -495,7 +484,8 @@ fig_apex <- fig_apex %>% layout(
     font = list(color = 'black', family = "Arial")
 )
 
-fig.show(fig_apex, renderer="iframe", filename="fig8_trajectory.html")
+htmlwidgets::saveWidget(fig_apex, "fig9_trajectory.html")
+IRdisplay::display_html("<iframe src='fig9_trajectory.html' width='100%' height='800px' style='border:none;'></iframe>")
 """))
 
 # ====== CONCLUSION ======
