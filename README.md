@@ -1,5 +1,12 @@
 # High-Resolution Pan-Cancer scRNA-Seq Atlas: Unveiling the Tumor Microenvironment via Advanced Manifold Learning and Evolutionary Trajectories
 
+[![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/code/qasimhu/3d-pan-cancer-scrna-seq-atlas)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+<p align="center">
+  <img src="figures/fig3_harmony.png" alt="Figure 3: Interlaced Pan-Cancer Harmony Manifold" />
+</p>
+
 ## Abstract
 The tumor microenvironment (TME) represents a profoundly complex and dynamic ecological niche, distinctly characterized by profound immunosuppression, metabolic competition, and continuous cellular exhaustion. Traditional bulk RNA sequencing methodologies inherently mask this critical intratumoral heterogeneity by providing merely population-level expression averages, thereby obscuring the rare, mechanistic cell states driving therapeutic resistance. 
 
