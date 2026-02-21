@@ -100,26 +100,6 @@ Through the meticulous execution of this highly scaled Single-Cell computational
 
 This bioinformatic pipeline acts as an exceptionally robust mathematical framework. By isolating and characterizing the precise exhaustion pathways within the TME, these findings provide immediate, high-confidence biomarkers capable of directing next-generation precision immunotherapies and personalized clinical intervention strategies.
 
-## Data Availability and Repository Governance
-
-This repository adheres to strict size limits for continuous integration efficiency. Target dataset volumes defining high-density expression matrices (`.rds`, `.h5ad`, `.csv`) and compiled multi-layered network models exceed generic version control maximums (100 MB limitations) and have been explicitly placed into the `.gitignore` directive.
-
-*   `data/`: Functional directory designated for the storage of primary un-normalized counts matrices. Contains a structural placeholder `README.md`.
-*   `models/`: Functional directory designated for pre-trained topological configurations and neural architectures. Contains a structural placeholder `README.md`.
-*   `notebooks/`: Contains the primary interactive engine `Kaggle_PanCancer_Atlas.ipynb`.
-
-### Visual Asset Population for GitHub
-
-The static `.png` placeholders currently populated inside `/figures/` are temporary architectural stand-ins designed to define the structural layout of this scholarly manuscript. 
-
-Because standard GitHub markdown cannot natively rasterize massive multi-dimensional JavaScript HTML widgets (Plotly / WebGL), you must export your definitive visualization matrices directly from your executed Kaggle environment to replace these structural mockups.
-
-**Instructions for the User Prior to Push:**
-1. Execute `Kaggle_PanCancer_Atlas.ipynb` to completion on the Kaggle server.
-2. For each generated Plotly object, utilize the native download icon built directly into the top right of the interactive widget to save a high-resolution static matrix map.
-3. Rename and drag your authentic, 50-gigabyte-derived visual artifacts directly into your local `/figures/` directory, overwriting the placeholder `.png` components.
-4. Execute `git commit -a -m "Populating high-fidelity scientific visuals"` to lock your definitive biological topologies into the repository before publishing.
-
 ## Software Dependencies
 The environment demands rigorous stability across specific mathematical package dependencies:
 *   `Seurat` (v5 Core Architecture)

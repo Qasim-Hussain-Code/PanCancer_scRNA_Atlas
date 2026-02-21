@@ -76,6 +76,7 @@ suppressPackageStartupMessages({
     library(plotly)
     library(htmlwidgets)
     library(IRdisplay)
+    library(jsonlite)
 })
 
 # ==============================================================================
@@ -87,10 +88,17 @@ suppressPackageStartupMessages({
 # the figure into Kaggle's trusted native IRkernel widget rendering engine.
 # ==============================================================================
 fig.show <- function(fig, renderer="iframe", filename=NULL) {
-    # Utilizing IRdisplay::display directly pipes the native Plotly JSON 
-    # into Kaggle's Jupyter frontend, rendering flawless, lightning-fast interactive graphics 
-    # without crashing the browser DOM or reverting to silent background processes like print().
-    suppressMessages(IRdisplay::display(fig))
+    if (is.null(filename)) filename <- "temp_plot.html"
+    
+    # Save widget precisely to file
+    htmlwidgets::saveWidget(plotly::as_widget(fig), filename, selfcontained = TRUE)
+    
+    # Extract structural HTML matrix and base64 encode it 
+    html_raw <- paste(readLines(filename, warn = FALSE), collapse = "\\n")
+    encoded <- sprintf("data:text/html;base64,%s", jsonlite::base64_enc(charToRaw(html_raw)))
+    
+    # Render natively as an unblockable src iframe
+    IRdisplay::display_html(sprintf('<iframe src="%s" width="900" height="700" style="border:none;" allowfullscreen></iframe>', encoded))
 }
 
 print("Core libraries and custom rendering engines successfully initialized.")
