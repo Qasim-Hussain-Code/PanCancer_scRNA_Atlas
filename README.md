@@ -108,17 +108,17 @@ This repository adheres to strict size limits for continuous integration efficie
 *   `models/`: Functional directory designated for pre-trained topological configurations and neural architectures. Contains a structural placeholder `README.md`.
 *   `notebooks/`: Contains the primary interactive engine `Kaggle_PanCancer_Atlas.ipynb`.
 
-### Execution Instructions for Figure Generation
+### Visual Asset Population for GitHub
 
-The standard Kaggle runtime utilizes dynamic JavaScript HTML widgets (Plotly / WebGL) which are computationally brilliant but cannot natively rasterize onto a flat GitHub landing page without `<iframe>` support. 
+The static `.png` placeholders currently populated inside `/figures/` are temporary architectural stand-ins designed to define the structural layout of this scholarly manuscript. 
 
-To reproduce the exact `.png` static visuals linked within this structural manuscript, we have provided the R-based rendering engine: `scripts/generate_static_figures.R`.
+Because standard GitHub markdown cannot natively rasterize massive multi-dimensional JavaScript HTML widgets (Plotly / WebGL), you must export your definitive visualization matrices directly from your executed Kaggle environment to replace these structural mockups.
 
-**Prerequisites:** Ensure your independent R-environment hosts the Python interpreter (`reticulate` package) synced with the `kaleido` visualization backend, alongside standard Bioconductor libraries.
-```R
-Rscript scripts/generate_static_figures.R 
-```
-This execution pathway will algorithmically re-derive the Seurat models and forcibly save absolute-resolution PNG components directly into the `/figures/` subdirectory.
+**Instructions for the User Prior to Push:**
+1. Execute `Kaggle_PanCancer_Atlas.ipynb` to completion on the Kaggle server.
+2. For each generated Plotly object, utilize the native download icon built directly into the top right of the interactive widget to save a high-resolution static matrix map.
+3. Rename and drag your authentic, 50-gigabyte-derived visual artifacts directly into your local `/figures/` directory, overwriting the placeholder `.png` components.
+4. Execute `git commit -a -m "Populating high-fidelity scientific visuals"` to lock your definitive biological topologies into the repository before publishing.
 
 ## Software Dependencies
 The environment demands rigorous stability across specific mathematical package dependencies:
@@ -128,5 +128,3 @@ The environment demands rigorous stability across specific mathematical package 
 *   `slingshot` (Minimum Spanning Tree Computations)
 *   `plotly` & `ComplexHeatmap` (Orthogonal Graphics Engines)
 
-## Authors and Funding
-Project architecture developed individually in pursuit of advanced high-throughput computational biological applications for pan-cancer molecular profiling. 
