@@ -1,4 +1,20 @@
-.Rproj.user
+# Ignore large data files to comply with GitHub 100MB limit
+data/*.rds
+data/*.rds
+data/*.h5ad
+data/*.h5
+data/*.csv
+data/*.tsv
+data/*.fasta
+
+# Ignore large model architectures
+models/*.pt
+models/*.h5
+
+# Project artifacts
+.Rproj.user/
 .Rhistory
 .RData
 .Ruserdata
+.ipynb_checkpoints/
+__pycache__/
