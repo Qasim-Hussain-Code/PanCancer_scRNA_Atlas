@@ -1,3 +1,16 @@
+---
+license: mit
+task_categories:
+  - tabular-classification
+tags:
+  - bioinformatics
+  - single-cell
+  - scrna-seq
+  - seurat
+  - tumor-microenvironment
+pretty_name: High-Resolution Pan-Cancer scRNA-Seq Atlas
+---
+
 # High-Resolution Pan-Cancer scRNA-Seq Atlas: Unveiling the Tumor Microenvironment via Advanced Manifold Learning and Evolutionary Trajectories
 
 [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/code/qasimhu/3d-pan-cancer-scrna-seq-atlas)
