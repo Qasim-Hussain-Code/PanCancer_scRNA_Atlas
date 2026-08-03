@@ -2,8 +2,6 @@
 
 [![Open in Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Open%20in%20Hugging%20Face-Dataset-FFD21E?style=flat&logo=huggingface&logoColor=black)](https://huggingface.co/datasets/QasimHussain/PanCancer_scRNA_Atlas) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
 <p align="center">
   <img src="figures/fig3_harmony.png" alt="Figure 3: Interlaced Pan-Cancer Harmony Manifold" />
 </p>
