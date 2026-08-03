@@ -8,5 +8,9 @@ iframe_figures/** linguist-generated=true
 iframe_figures/** linguist-documentation=true
 **/*.html linguist-detectable=false
 
-# Exclude Jupyter Notebooks so R dominates stats
-**/*.ipynb linguist-detectable=false
+# Map Jupyter Notebooks directly to R (Seurat pipeline)
+**/*.ipynb linguist-language=R
+
+# Ignore utility Python scripts from language breakdown
+*.py linguist-detectable=false
+scripts/*.py linguist-detectable=false
