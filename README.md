@@ -1,5 +1,7 @@
 # High-Resolution Pan-Cancer scRNA-Seq Atlas: Unveiling the Tumor Microenvironment via Advanced Manifold Learning and Evolutionary Trajectories
 
+[![Open in Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Open%20in%20Hugging%20Face-Dataset-FFD21E?style=flat&logo=huggingface&logoColor=black)](https://huggingface.co/datasets/QasimHussain/PanCancer_scRNA_Atlas) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 <p align="center">
